@@ -1,0 +1,27 @@
+# =============================================================================
+# vps-backup — Fichero de configuración
+# Copia este fichero como backup.conf y ajusta los valores
+# =============================================================================
+
+# --- Identificación del servidor ---
+SERVER_ID="mi_servidor"                  # Nombre único para este VPS (sin espacios)
+EMAIL="admin@ejemplo.com"                # Email para notificaciones de error
+
+# --- Rclone / Backblaze B2 ---
+RCLONE_REMOTE="b2Bucket_NombreRemoto"   # Nombre del remote configurado en rclone
+B2_BUCKET="Mi-Bucket-Backups"           # Nombre del bucket en Backblaze B2
+
+# --- Retención en B2 ---
+DB_RETENTION_DAYS=30                     # Días que se conservan los backups de bases de datos
+WEB_RETENTION_DAYS=7                     # Días que se conservan los backups de webs
+
+# --- Bases de datos ---
+MYSQL_THREADS=4                          # Hilos para mydumper
+MYSQL_EXCLUDE="mysql|performance_schema|information_schema|sys|apsc|psa|phpmyadmin|horde"
+
+# --- Webs ---
+VHOSTS_DIR="/var/www/vhosts"             # Directorio raíz de vhosts (Plesk por defecto)
+VHOSTS_EXCLUDE="chroot|default|system"  # Carpetas a ignorar dentro de vhosts
+
+# --- Rutas locales ---
+BACKUP_BASE="/root/backups"              # Directorio base para backups locales y logs
