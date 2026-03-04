@@ -105,8 +105,8 @@ echo ""
 
 # === PERMISOS DE SCRIPTS ===
 echo "── Permisos de scripts ───────────────────"
-chmod +x "${SCRIPT_DIR}/scripts/backup-databases.sh"
-chmod +x "${SCRIPT_DIR}/scripts/backup-websites.sh"
+chmod +x "${SCRIPT_DIR}/backup-databases.sh"
+chmod +x "${SCRIPT_DIR}/backup-websites.sh"
 echo "[✅] Permisos configurados"
 
 # === DIRECTORIO DE BACKUPS ===
@@ -119,8 +119,8 @@ echo "[✅] Directorios creados en ${BACKUP_BASE}"
 echo ""
 echo "── Configuración de crontab ──────────────"
 
-DB_CRON="30 2 * * * ${SCRIPT_DIR}/scripts/backup-databases.sh >> ${BACKUP_BASE}/logs/cron-databases-\$(date +\\%F).log 2>&1"
-WEB_CRON="45 3 * * * ${SCRIPT_DIR}/scripts/backup-websites.sh >> ${BACKUP_BASE}/logs/cron-websites-\$(date +\\%F).log 2>&1"
+DB_CRON="30 2 * * * ${SCRIPT_DIR}/backup-databases.sh >> ${BACKUP_BASE}/logs/cron-databases-\$(date +\\%F).log 2>&1"
+WEB_CRON="45 3 * * * ${SCRIPT_DIR}/backup-websites.sh >> ${BACKUP_BASE}/logs/cron-websites-\$(date +\\%F).log 2>&1"
 
 CURRENT_CRONTAB=$(crontab -l 2>/dev/null || true)
 

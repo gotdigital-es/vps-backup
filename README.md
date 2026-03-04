@@ -86,15 +86,15 @@ rclone lsd b2NombreRemoto:Mi-Bucket-Backups
 ## Ejecución manual
 
 ```bash
-bash /root/vps-backup/scripts/backup-databases.sh
-bash /root/vps-backup/scripts/backup-websites.sh
+bash /root/vps-backup/backup-databases.sh
+bash /root/vps-backup/backup-websites.sh
 ```
 
 ## Crontab resultante
 
 ```
-30 2 * * * /root/vps-backup/scripts/backup-databases.sh >> /root/backups/logs/cron-databases-$(date +\%F).log 2>&1
-45 3 * * * /root/vps-backup/scripts/backup-websites.sh >> /root/backups/logs/cron-websites-$(date +\%F).log 2>&1
+30 2 * * * /root/vps-backup/backup-databases.sh >> /root/backups/logs/cron-databases-$(date +\%F).log 2>&1
+45 3 * * * /root/vps-backup/backup-websites.sh >> /root/backups/logs/cron-websites-$(date +\%F).log 2>&1
 ```
 
 ## Desplegar en un segundo VPS
