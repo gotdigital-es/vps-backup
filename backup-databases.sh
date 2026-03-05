@@ -8,7 +8,7 @@ set -euo pipefail
 
 # === CARGAR CONFIGURACIÓN ===
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-CONFIG_FILE="${SCRIPT_DIR}/../backup.conf"
+CONFIG_FILE="${SCRIPT_DIR}/backup.conf"
 
 if [ ! -f "$CONFIG_FILE" ]; then
     echo "[❌] No se encuentra backup.conf en $(dirname "$CONFIG_FILE")"
